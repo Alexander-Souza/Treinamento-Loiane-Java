@@ -3,33 +3,48 @@ package br.com.exercicio.lampada;
 public class Lampada {
 	private String modelo;
 	private String tensao;
-	int potencia;
-	String cor;
-	String tipoLuz;
-	int garantiaMeses;
-	String[] tipos;
-	boolean tipoAbajur;
+	private int potencia;
+	private String cor;
+	private String tipoLuz;
+	private int garantiaMeses;
+	private String[] tipos;
+	private boolean tipoAbajur;
 	
-	boolean ligada;
+	private boolean ligada;
 	
-	void ligar() {
-		ligada = true;
+	
+	
+	public Lampada(String modelo, String tensao, int potencia, String cor, String tipoLuz, int garantiaMeses,
+			String[] tipos, boolean tipoAbajur, boolean ligada) {
+		this.modelo = modelo;
+		this.tensao = tensao;
+		this.potencia = potencia;
+		this.cor = cor;
+		this.tipoLuz = tipoLuz;
+		this.garantiaMeses = garantiaMeses;
+		this.tipos = tipos;
+		this.tipoAbajur = tipoAbajur;
+		this.ligada = ligada;
+	}
+
+	public void ligar() {
+		this.ligada = true;
 	}
 	
-	void desligada() {
-		ligada = false;
+	public void desligada() {
+		this.ligada = false;
 	}
 	
-	void mostrarEstado() {
-		if(ligada) {
+	public void mostrarEstado() {
+		if(this.ligada) {
 			System.out.println("A lâmpada esta ligada");
 		}else {
 			System.out.println("A lâmpada esta desligada");
 		}
 	}
 	
-	void mudarEstado() {
-		if(ligada) {
+	public void mudarEstado() {
+		if(this.ligada) {
 			desligada();
 		}else {
 			ligar();
